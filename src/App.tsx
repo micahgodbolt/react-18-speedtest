@@ -5,6 +5,7 @@ import {  FluentProvider, webLightTheme } from "@fluentui/react-components";
 import {Button as WCButton} from "./WCButton/components/Button";
 import {Button} from "./Button/components/Button";
 import chalk from 'chalk';
+import { ArrowCircleRight12Filled } from "@fluentui/react-icons";
 
 import { fluentButton, provideFluentDesignSystem } from '@fluentui/web-components';
 
@@ -15,7 +16,7 @@ import "./App.css";
 const range = Array.from({length: 1000}, (_, index) => index + 1);
 
 const TestWC = (props) => {
-  return (<fluent-button appearance={props.appearance} onClick={props.handleClick}> {props.value} </fluent-button>)
+  return (<fluent-button appearance={props.appearance} onClick={props.handleClick}> <ArrowCircleRight12Filled /> {props.value} </fluent-button>)
 }
 
 
@@ -31,7 +32,7 @@ function App() {
       <React.Profiler id="pure WC" onRender={(a, b, c, d) => console.log(chalk.bgCyanBright(a, c, d))}>
       <div style={{ maxWidth: 1000, display: 'flex', flexWrap: 'wrap' }} >
          {range.map(key => {
-           return <fluent-button appearance={alt ? 'accent' : 'lightweight' } onClick={handleClick} key={key}>{value + key} </fluent-button>
+           return <fluent-button appearance={alt ? 'accent' : 'lightweight' } onClick={handleClick} key={key}><ArrowCircleRight12Filled /> {value + key} </fluent-button>
          })}
       </div>
       </React.Profiler>
